@@ -1,0 +1,114 @@
+openapi: 3.1.0
+info:
+  title: SEO Governance Platform
+  version: 1.0.0
+  description: >
+    Recruiter-ready API for enterprise SEO governance, metadata validation,
+    schema QA, redirect review, and publishing-readiness workflows.
+servers:
+  - url: http://localhost:3000
+paths:
+  /health:
+    get:
+      summary: Service health status
+      responses:
+        '200':
+          description: Healthy service response
+  /api/sites:
+    get:
+      summary: List tracked sites
+      responses:
+        '200':
+          description: Array of enterprise site records
+  /api/pages:
+    get:
+      summary: List governed pages
+      responses:
+        '200':
+          description: Array of page records
+  /api/pages/{id}:
+    get:
+      summary: Get one governed page
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Page record
+        '404':
+          description: Page not found
+  /api/audits:
+    get:
+      summary: List SEO audit records
+      responses:
+        '200':
+          description: Array of SEO audit objects
+  /api/redirects:
+    get:
+      summary: List redirect rules
+      responses:
+        '200':
+          description: Array of redirect rules
+  /api/policies:
+    get:
+      summary: List governance policies
+      responses:
+        '200':
+          description: Array of governance policy records
+  /api/dashboard/summary:
+    get:
+      summary: Governance dashboard summary
+      responses:
+        '200':
+          description: Aggregate audit and risk summary
+  /api/validate/page:
+    post:
+      summary: Validate page metadata and content readiness
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Page validation result
+  /api/validate/schema:
+    post:
+      summary: Validate JSON-LD schema payloads
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Schema validation result
+  /api/validate/redirect:
+    post:
+      summary: Validate redirect safety and governance compliance
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Redirect validation result
+  /api/publishing-check:
+    post:
+      summary: Run a combined publishing readiness workflow
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Publishing readiness result
