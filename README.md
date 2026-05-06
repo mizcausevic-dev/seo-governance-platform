@@ -157,15 +157,15 @@ The publishing-check endpoint combines page and schema review into a single oper
 
 ### Hero Capture
 
-![Swagger UI](https://raw.githubusercontent.com/mizcausevic-dev/seo-governance-platform/project/seo-governance-platform/screenshots/01-hero.png)
+![Swagger UI](screenshots/01-hero.png)
 
 ### Governance Validation Workflow
 
-![Validation workflow](https://raw.githubusercontent.com/mizcausevic-dev/seo-governance-platform/project/seo-governance-platform/screenshots/02-feature.png)
+![Validation workflow](screenshots/02-feature.png)
 
 ### Publishing Readiness Proof
 
-![Publishing proof](https://raw.githubusercontent.com/mizcausevic-dev/seo-governance-platform/project/seo-governance-platform/screenshots/03-proof.png)
+![Publishing proof](screenshots/03-proof.png)
 
 ---
 
